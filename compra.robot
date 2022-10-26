@@ -1,6 +1,6 @@
 # Configura
 *** Settings ***
-Documentation    Fluxo de compra no site Blazedemo
+Documentation    Fluxo de compra no site Blazedemo (e2e)
 
 Library          SeleniumLibrary
 
@@ -37,8 +37,8 @@ Dado que acesso o site Blazedemo
 Quando seleciono a origem como "${origem}" e destino como "${destino}"
     set test variable   ${origem}
     set test variable   ${destino}
-    select from list by label   name = fromPort     ${origem}
-    select from list by label   name = toPort       ${destino}
+    select from list by label   id = fromPort     ${origem}
+    select from list by label   id = toPort       ${destino}
 
 E clico no botao Find Flights
     click button    class = btn.btn-primary

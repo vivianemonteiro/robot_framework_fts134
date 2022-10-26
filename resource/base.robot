@@ -1,6 +1,5 @@
 *** Settings ***
 Library     SeleniumLibrary
-Library     Browser
 Library     OperatingSystem
 
 Resource    actions/confirmation.robot
@@ -11,11 +10,11 @@ Resource    actions/reserve.robot
 
 *** Variables ***
 ${timeout}  10
-${url}      https://www.blazzedemo.com
+${url}      https://blazedemo.com
 ${browser}  Chrome
 
 *** Keywords ***
-Abrir navegador
+Abrir Navegador
     open browser    ${url}    ${browser}
 
 Fechar Navegador
