@@ -1,157 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0 (Python 3.10.8 on win32)" generated="20221026 11:54:13.489" rpa="false" schemaversion="3">
-<suite id="s1" name="Comprar Passagem" source="C:\Users\A426692\PycharmProjects\robot_framework_fts134\tests\web\comprar_passagem.robot">
-<test id="s1-t1" name="Comprar primeira passagem para o destino" line="12">
+<robot generator="Robot 6.0 (Python 3.10.8 on win32)" generated="20221027 10:22:47.409" rpa="false" schemaversion="3">
+<suite id="s1" name="Comprar Passagem Lista" source="C:\Users\A426692\PycharmProjects\robot_framework_fts134\tests\web\comprar_passagem_lista.robot">
+<test id="s1-t1" name="Passagem Paris-Buenos Aires" line="13">
 <kw name="Abrir Navegador" library="base" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221026 11:54:13.692" level="INFO">Opening browser 'Chrome' to base url 'https://blazedemo.com'.</msg>
-<status status="PASS" starttime="20221026 11:54:13.692" endtime="20221026 11:54:16.225"/>
+<msg timestamp="20221027 10:22:47.643" level="INFO">Opening browser 'Chrome' to base url 'https://blazedemo.com'.</msg>
+<status status="PASS" starttime="20221027 10:22:47.643" endtime="20221027 10:22:50.193"/>
 </kw>
-<status status="PASS" starttime="20221026 11:54:13.692" endtime="20221026 11:54:16.225"/>
+<status status="PASS" starttime="20221027 10:22:47.643" endtime="20221027 10:22:50.193"/>
 </kw>
+<kw name="Selecionar Origem e Destino">
+<arg>Paris</arg>
+<arg>Buenos Aires</arg>
 <kw name="Selecionar origem e destino do voo" library="index">
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>name = fromPort</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20221026 11:54:16.226" endtime="20221026 11:54:16.258"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name = fromPort</arg>
 <arg>${origem}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20221026 11:54:16.259" level="INFO">Selecting options from selection list 'name = fromPort' by label San Diego.</msg>
-<status status="PASS" starttime="20221026 11:54:16.258" endtime="20221026 11:54:16.317"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name = toPort</arg>
 <arg>${destino}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20221026 11:54:16.317" level="INFO">Selecting options from selection list 'name = toPort' by label Berlin.</msg>
-<status status="PASS" starttime="20221026 11:54:16.317" endtime="20221026 11:54:16.383"/>
+<msg timestamp="20221027 10:22:50.194" level="FAIL">Keyword 'index.Selecionar origem e destino do voo' expected 0 arguments, got 2.</msg>
+<status status="FAIL" starttime="20221027 10:22:50.194" endtime="20221027 10:22:50.194"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>class = btn.btn-primary</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20221026 11:54:16.384" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
-<status status="PASS" starttime="20221026 11:54:16.383" endtime="20221026 11:54:16.727"/>
+<kw name="Validar o Titulo de Origem e Destino" library="reserve">
+<arg>${origem}</arg>
+<arg>${destino}</arg>
+<status status="NOT RUN" starttime="20221027 10:22:50.194" endtime="20221027 10:22:50.194"/>
 </kw>
-<status status="PASS" starttime="20221026 11:54:16.226" endtime="20221026 11:54:16.727"/>
-</kw>
-<kw name="Selecionar Primeiro Voo" library="reserve">
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>class = btn.btn-small</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20221026 11:54:16.727" endtime="20221026 11:54:16.758"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>class = btn.btn-small</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20221026 11:54:16.758" level="INFO">Clicking button 'class = btn.btn-small'.</msg>
-<status status="PASS" starttime="20221026 11:54:16.758" endtime="20221026 11:54:17.079"/>
-</kw>
-<status status="PASS" starttime="20221026 11:54:16.727" endtime="20221026 11:54:17.079"/>
-</kw>
-<kw name="Preencher nome &quot;Viviane&quot;" library="purchase" sourcename="Preencher nome &quot;${nome}&quot;">
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>id = inputName</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20221026 11:54:17.079" endtime="20221026 11:54:17.103"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id = inputName</arg>
-<arg>${nome}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221026 11:54:17.103" level="INFO">Typing text 'Viviane' into text field 'id = inputName'.</msg>
-<status status="PASS" starttime="20221026 11:54:17.103" endtime="20221026 11:54:17.156"/>
-</kw>
-<status status="PASS" starttime="20221026 11:54:17.079" endtime="20221026 11:54:17.156"/>
-</kw>
-<kw name="Selecionar bandeira &quot;Diner's Club&quot;" library="purchase" sourcename="Selecionar bandeira &quot;${bandeira}&quot;">
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>id = cardType</arg>
-<arg>${bandeira}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20221026 11:54:17.157" level="INFO">Selecting options from selection list 'id = cardType' by label Diner's Club.</msg>
-<status status="PASS" starttime="20221026 11:54:17.156" endtime="20221026 11:54:17.217"/>
-</kw>
-<status status="PASS" starttime="20221026 11:54:17.156" endtime="20221026 11:54:17.217"/>
-</kw>
-<kw name="Clicar em Lembrar de mim" library="purchase">
-<kw name="Select Checkbox" library="SeleniumLibrary">
-<arg>id = rememberMe</arg>
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<msg timestamp="20221026 11:54:17.218" level="INFO">Selecting checkbox 'id = rememberMe'.</msg>
-<status status="PASS" starttime="20221026 11:54:17.218" endtime="20221026 11:54:17.268"/>
-</kw>
-<status status="PASS" starttime="20221026 11:54:17.218" endtime="20221026 11:54:17.268"/>
-</kw>
-<kw name="Clicar no botão Purchase Flight" library="purchase">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>class = btn.btn-primary</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20221026 11:54:17.269" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
-<status status="PASS" starttime="20221026 11:54:17.268" endtime="20221026 11:54:17.588"/>
-</kw>
-<status status="PASS" starttime="20221026 11:54:17.268" endtime="20221026 11:54:17.588"/>
-</kw>
-<kw name="Validar a mensagem de agradecimento &quot;Thank you for your purchase today!&quot;" library="confirmation" sourcename="Validar a mensagem de agradecimento &quot;${mensagem}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath = //h1</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221026 11:54:17.590" endtime="20221026 11:54:17.609"/>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>xpath = //h1</arg>
-<arg>${mensagem}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20221026 11:54:17.610" level="INFO">Verifying element 'xpath = //h1' contains exact text 'Thank you for your purchase today!'.</msg>
-<status status="PASS" starttime="20221026 11:54:17.609" endtime="20221026 11:54:17.625"/>
-</kw>
-<status status="PASS" starttime="20221026 11:54:17.588" endtime="20221026 11:54:17.625"/>
-</kw>
-<kw name="Validar o preco da passagem &quot;555 USD&quot;" library="confirmation" sourcename="Validar o preco da passagem &quot;${preco}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css = tr:nth-child(3) &gt; td:nth-child(2)</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221026 11:54:17.626" endtime="20221026 11:54:17.645"/>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>css = tr:nth-child(3) &gt; td:nth-child(2)</arg>
-<arg>${preco}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20221026 11:54:17.645" level="INFO">Verifying element 'css = tr:nth-child(3) &gt; td:nth-child(2)' contains exact text '555 USD'.</msg>
-<status status="PASS" starttime="20221026 11:54:17.645" endtime="20221026 11:54:17.658"/>
-</kw>
-<status status="PASS" starttime="20221026 11:54:17.625" endtime="20221026 11:54:17.658"/>
+<status status="FAIL" starttime="20221027 10:22:50.194" endtime="20221027 10:22:50.194"/>
 </kw>
 <kw name="Fechar Navegador" library="base" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221026 11:54:17.659" endtime="20221026 11:54:19.779"/>
+<status status="PASS" starttime="20221027 10:22:50.195" endtime="20221027 10:22:52.343"/>
 </kw>
-<status status="PASS" starttime="20221026 11:54:17.659" endtime="20221026 11:54:19.779"/>
+<status status="PASS" starttime="20221027 10:22:50.195" endtime="20221027 10:22:52.343"/>
 </kw>
-<status status="PASS" starttime="20221026 11:54:13.691" endtime="20221026 11:54:19.780"/>
+<status status="FAIL" starttime="20221027 10:22:47.642" endtime="20221027 10:22:52.344">Keyword 'index.Selecionar origem e destino do voo' expected 0 arguments, got 2.</status>
 </test>
-<doc>Teste do fluxo de compra (e2e)</doc>
-<status status="PASS" starttime="20221026 11:54:13.491" endtime="20221026 11:54:19.781"/>
+<test id="s1-t2" name="Passagem-San Diego-Roma" line="14">
+<kw name="Abrir Navegador" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 10:22:52.347" level="INFO">Opening browser 'Chrome' to base url 'https://blazedemo.com'.</msg>
+<status status="PASS" starttime="20221027 10:22:52.347" endtime="20221027 10:22:54.715"/>
+</kw>
+<status status="PASS" starttime="20221027 10:22:52.345" endtime="20221027 10:22:54.715"/>
+</kw>
+<kw name="Selecionar Origem e Destino">
+<arg>San Diego</arg>
+<arg>Rome</arg>
+<kw name="Selecionar origem e destino do voo" library="index">
+<arg>${origem}</arg>
+<arg>${destino}</arg>
+<msg timestamp="20221027 10:22:54.717" level="FAIL">Keyword 'index.Selecionar origem e destino do voo' expected 0 arguments, got 2.</msg>
+<status status="FAIL" starttime="20221027 10:22:54.716" endtime="20221027 10:22:54.717"/>
+</kw>
+<kw name="Validar o Titulo de Origem e Destino" library="reserve">
+<arg>${origem}</arg>
+<arg>${destino}</arg>
+<status status="NOT RUN" starttime="20221027 10:22:54.717" endtime="20221027 10:22:54.717"/>
+</kw>
+<status status="FAIL" starttime="20221027 10:22:54.716" endtime="20221027 10:22:54.717"/>
+</kw>
+<kw name="Fechar Navegador" library="base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 10:22:54.718" endtime="20221027 10:22:56.844"/>
+</kw>
+<status status="PASS" starttime="20221027 10:22:54.717" endtime="20221027 10:22:56.844"/>
+</kw>
+<status status="FAIL" starttime="20221027 10:22:52.345" endtime="20221027 10:22:56.845">Keyword 'index.Selecionar origem e destino do voo' expected 0 arguments, got 2.</status>
+</test>
+<test id="s1-t3" name="CT22-Boston-London" line="15">
+<kw name="Abrir Navegador" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221027 10:22:56.850" level="INFO">Opening browser 'Chrome' to base url 'https://blazedemo.com'.</msg>
+<status status="PASS" starttime="20221027 10:22:56.849" endtime="20221027 10:22:59.326"/>
+</kw>
+<status status="PASS" starttime="20221027 10:22:56.849" endtime="20221027 10:22:59.326"/>
+</kw>
+<kw name="Selecionar Origem e Destino">
+<arg>Boston</arg>
+<arg>London</arg>
+<kw name="Selecionar origem e destino do voo" library="index">
+<arg>${origem}</arg>
+<arg>${destino}</arg>
+<msg timestamp="20221027 10:22:59.327" level="FAIL">Keyword 'index.Selecionar origem e destino do voo' expected 0 arguments, got 2.</msg>
+<status status="FAIL" starttime="20221027 10:22:59.327" endtime="20221027 10:22:59.327"/>
+</kw>
+<kw name="Validar o Titulo de Origem e Destino" library="reserve">
+<arg>${origem}</arg>
+<arg>${destino}</arg>
+<status status="NOT RUN" starttime="20221027 10:22:59.327" endtime="20221027 10:22:59.327"/>
+</kw>
+<status status="FAIL" starttime="20221027 10:22:59.326" endtime="20221027 10:22:59.328"/>
+</kw>
+<kw name="Fechar Navegador" library="base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221027 10:22:59.328" endtime="20221027 10:23:01.449"/>
+</kw>
+<status status="PASS" starttime="20221027 10:22:59.328" endtime="20221027 10:23:01.449"/>
+</kw>
+<status status="FAIL" starttime="20221027 10:22:56.848" endtime="20221027 10:23:01.449">Keyword 'index.Selecionar origem e destino do voo' expected 0 arguments, got 2.</status>
+</test>
+<doc>Realizar compra de passagem a partir de uma lista</doc>
+<status status="FAIL" starttime="20221027 10:22:47.411" endtime="20221027 10:23:01.451"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Comprar Passagem">Comprar Passagem</stat>
+<stat pass="0" fail="3" skip="0" id="s1" name="Comprar Passagem Lista">Comprar Passagem Lista</stat>
 </suite>
 </statistics>
 <errors>
