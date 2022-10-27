@@ -5,18 +5,20 @@ Test Teardown     Quit Application
 Suite Teardown    Close Application
 
 *** Variables ***
-${Sauce_Username}               oauth-vivianemonteiro-5962e
-${Sauce_Access_Key}             c70644eb-0477-40f3-a021-d8abc3f65d78
-${REMOTE_URL}                   https://{${Sauce_Username}:${Sauce_Access_Key}@ondemand.us-west-1.saucelabs.com:443/wd/hub
-${appium:deviceName}            Samsung Galaxy S9 FHD GoogleAPI Emulator
-${platformName}                 Android
-${appium:appiumVersion}         1.22.3
-${appium:deviceOrientation}     potrait
-${appium:app}                   storage:filename=mda-1.0.13-docs-16.apk
-${appium:appPackage}            com.saucelabs.mydemoapp.android
-${appium:appActivity}           com.saucelabs.mydemoapp.android.view.activities.SplashActivity
-${appium:platformVersion}       9.0
-${appium:automationName}        UiAutomator2
+${REMOTE_URL}                           https://oauth-vivianemonteiro-5962e:c70644eb-0477-40f3-a021-d8abc3f65d78@ondemand.us-west-1.saucelabs.com:443/wd/hub
+${platformName}                         Android
+${appium:platformVersion}               9.0
+${appium:appiumVersion}                 1.22.0
+${appium:deviceName}                    Samsung Galaxy S9 FHD GoogleAPI Emulator
+${appium:deviceOrientation}             portrait
+${appium:app}                           storage:filename=mda-1.0.13-docs-16.apk
+${appium:appPackage}                    com.saucelabs.mydemoapp.android
+${appium:appActivity}                   com.saucelabs.mydemoapp.android.view.activities.SplashActivity
+${appium:ensureWebviewsHavePages}       true
+${appium:nativeWebScreenshot}           true
+${appium:newCommandTimeout}             0
+${appium:connectHardwareKeyboard}       true
+
 
 *** Test Case ***
 Teste Saucelabs Navegacao
