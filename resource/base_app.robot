@@ -7,7 +7,7 @@ Resource        actions_app/catalog.robot
 Resource        actions_app/product.robot
 
 *** Variables ***
-${REMOTE_URL}                           https://oauth-vivianemonteiro-5962e:c70644eb-0477-40f3-a021-d8abc3f65d78@ondemand.us-west-1.saucelabs.com:443/wd/hub
+${REMOTE_URL}                           https://@ondemand.us-west-1.saucelabs.com:443/wd/hub
 ${platformName}                         Android
 ${appium:platformVersion}               9.0
 ${appium:appiumVersion}                 1.22.0
